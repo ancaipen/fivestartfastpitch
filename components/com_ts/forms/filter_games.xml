@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fields name="filter">
+        <field name="search" type="text" hint="COM_TS_SEARCH_FILTER_SUBMIT"
+               label="COM_USERS_FILTER_SEARCH_DESC"
+               class="js-stools-search-string" />
+
+        <field name="age_id" label="COM_TS_FORM_LBL_GAME_AGE_ID" type="sql" query="SELECT * FROM `#__ts_age` WHERE 1" header="COM_TS_GAMES_AGE_ID_FILTER" translate="true" key_field="age_num" value_field="age" onchange="this.form.submit();"/>
+<field name="tournament_id" label="COM_TS_FORM_LBL_GAME_TOURNAMENT_ID" type="sql" query="SELECT * FROM `#__ts_tournament` WHERE 1" header="COM_TS_GAMES_TOURNAMENT_ID_FILTER" translate="true" key_field="tournament_id" value_field="tournament_name" onchange="this.form.submit();"/>
+
+
+    </fields>
+    <fields name="list">
+
+        <field name="fullordering"
+               type="list"
+               label="COM_TS_LIST_FULL_ORDERING"
+               description="COM_TS_LIST_FULL_ORDERING_DESC"
+               onchange="this.form.submit();"
+               default="a.id DESC"
+        >
+            <option value="">JGLOBAL_SORT_BY</option>
+            <option value="a.id ASC">COM_TS_ID_ASC</option><option value="a.id DESC">COM_TS_ID_DESC</option><option value="a.state ASC">COM_TS_STATE_ASC</option><option value="a.state DESC">COM_TS_STATE_DESC</option><option value="a.ordering ASC">COM_TS_ORDERING_ASC</option><option value="a.ordering DESC">COM_TS_ORDERING_DESC</option><option value="a.home_team ASC">COM_TS_HOME_TEAM_ASC</option><option value="a.home_team DESC">COM_TS_HOME_TEAM_DESC</option><option value="a.visitor_team ASC">COM_TS_VISITOR_TEAM_ASC</option><option value="a.visitor_team DESC">COM_TS_VISITOR_TEAM_DESC</option><option value="a.game_date ASC">COM_TS_GAME_DATE_ASC</option><option value="a.game_date DESC">COM_TS_GAME_DATE_DESC</option><option value="a.game_type ASC">COM_TS_GAME_TYPE_ASC</option><option value="a.game_type DESC">COM_TS_GAME_TYPE_DESC</option><option value="a.home_score ASC">COM_TS_HOME_SCORE_ASC</option><option value="a.home_score DESC">COM_TS_HOME_SCORE_DESC</option><option value="a.visitor_score ASC">COM_TS_VISITOR_SCORE_ASC</option><option value="a.visitor_score DESC">COM_TS_VISITOR_SCORE_DESC</option><option value="a.age_id ASC">COM_TS_AGE_ID_ASC</option><option value="a.age_id DESC">COM_TS_AGE_ID_DESC</option><option value="a.tournament_id ASC">COM_TS_TOURNAMENT_ID_ASC</option><option value="a.tournament_id DESC">COM_TS_TOURNAMENT_ID_DESC</option><option value="a.game_time ASC">COM_TS_GAME_TIME_ASC</option><option value="a.game_time DESC">COM_TS_GAME_TIME_DESC</option>
+
+        </field>
+
+       <field name="limit"
+               type="limitbox"
+               label="COM_TS_LIST_LIMIT"
+               description="COM_TS_LIST_LIMIT_DESC"
+               class="input-mini"
+               default="25"
+               onchange="this.form.submit();"
+        />
+
+    </fields>
+</form>

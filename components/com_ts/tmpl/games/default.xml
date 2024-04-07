@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="COM_TS_TITLE_LIST_VIEW_GAMES" option="View">
+        <message>
+                        <![CDATA[COM_TS_TITLE_LIST_VIEW_GAMES_DESC]]>
+        </message>
+	</layout>
+	
+</metadata>

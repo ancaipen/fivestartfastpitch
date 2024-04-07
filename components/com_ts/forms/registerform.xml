@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form addfieldprefix="Teamtournaments\Component\Ts\Site\Field">
+  <fieldset>
+    <field name="id" type="text" readonly="true" class="readonly" default="0" description="JGLOBAL_FIELD_ID_DESC"/>
+    <field name="state" default="1" type="list" label="JSTATUS" description="JFIELD_PUBLISHED_DESC" class="inputbox" size="1">
+      <option value="1">JPUBLISHED</option>
+      <option value="0">JUNPUBLISHED</option>
+      <option value="2">JARCHIVED</option>
+      <option value="-2">JTRASHED</option>
+    </field>
+    <field name="ordering"/>
+    <field name="checked_out" type="hidden" filter="unset"/>
+    <field name="checked_out_time" type="hidden" filter="unset"/>
+    <field name="team_manager_1" default="NULL" label="COM_TS_FORM_LBL_REGISTER_TEAM_MANAGER_1" description="COM_TS_FORM_DESC_REGISTER_TEAM_MANAGER_1" hidden="true" hint="COM_TS_FORM_LBL_REGISTER_TEAM_MANAGER_1"/>
+    <field name="team_address" default="NULL" type="editor" buttons="true" class="inputbox" filter="safehtml" label="COM_TS_FORM_LBL_REGISTER_TEAM_ADDRESS" description="COM_TS_FORM_DESC_REGISTER_TEAM_ADDRESS" hidden="true" hint="COM_TS_FORM_LBL_REGISTER_TEAM_ADDRESS"/>
+    <field name="level_play" default="NULL" label="COM_TS_FORM_LBL_REGISTER_LEVEL_PLAY" description="COM_TS_FORM_DESC_REGISTER_LEVEL_PLAY" hidden="true" hint="COM_TS_FORM_LBL_REGISTER_LEVEL_PLAY"/>
+    <field name="registration_number" type="editor" buttons="true" class="inputbox" filter="safehtml" label="COM_TS_FORM_LBL_REGISTER_REGISTRATION_NUMBER" description="COM_TS_FORM_DESC_REGISTER_REGISTRATION_NUMBER" hidden="true" hint="COM_TS_FORM_LBL_REGISTER_REGISTRATION_NUMBER"/>
+    <field name="team_name" type="editor" buttons="true" class="inputbox" filter="safehtml" label="COM_TS_FORM_LBL_REGISTER_TEAM_NAME" description="COM_TS_FORM_DESC_REGISTER_TEAM_NAME" hidden="true" hint="COM_TS_FORM_LBL_REGISTER_TEAM_NAME"/>
+    <field name="team_manager_2" default="NULL" label="COM_TS_FORM_LBL_REGISTER_TEAM_MANAGER_2" description="COM_TS_FORM_DESC_REGISTER_TEAM_MANAGER_2" hidden="true" hint="COM_TS_FORM_LBL_REGISTER_TEAM_MANAGER_2"/>
+    <field name="team_city" default="NULL" label="COM_TS_FORM_LBL_REGISTER_TEAM_CITY" description="COM_TS_FORM_DESC_REGISTER_TEAM_CITY" hidden="true" hint="COM_TS_FORM_LBL_REGISTER_TEAM_CITY"/>
+    <field name="team_state" default="NULL" label="COM_TS_FORM_LBL_REGISTER_TEAM_STATE" description="COM_TS_FORM_DESC_REGISTER_TEAM_STATE" hidden="true" hint="COM_TS_FORM_LBL_REGISTER_TEAM_STATE"/>
+    <field name="team_zip" default="NULL" label="COM_TS_FORM_LBL_REGISTER_TEAM_ZIP" description="COM_TS_FORM_DESC_REGISTER_TEAM_ZIP" hidden="true" hint="COM_TS_FORM_LBL_REGISTER_TEAM_ZIP"/>
+    <field name="home_phone" default="NULL" label="COM_TS_FORM_LBL_REGISTER_HOME_PHONE" description="COM_TS_FORM_DESC_REGISTER_HOME_PHONE" hidden="true" hint="COM_TS_FORM_LBL_REGISTER_HOME_PHONE"/>
+    <field name="cell_phone_2" default="NULL" label="COM_TS_FORM_LBL_REGISTER_CELL_PHONE_2" description="COM_TS_FORM_DESC_REGISTER_CELL_PHONE_2" hidden="true" hint="COM_TS_FORM_LBL_REGISTER_CELL_PHONE_2"/>
+    <field name="email_1" default="NULL" label="COM_TS_FORM_LBL_REGISTER_EMAIL_1" description="COM_TS_FORM_DESC_REGISTER_EMAIL_1" hidden="true" hint="COM_TS_FORM_LBL_REGISTER_EMAIL_1"/>
+    <field name="season_id" label="COM_TS_FORM_LBL_REGISTER_SEASON_ID" description="COM_TS_FORM_DESC_REGISTER_SEASON_ID" hidden="true" hint="COM_TS_FORM_LBL_REGISTER_SEASON_ID"/>
+    <field name="reg_status" default="NULL" label="COM_TS_FORM_LBL_REGISTER_REG_STATUS" description="COM_TS_FORM_DESC_REGISTER_REG_STATUS" hidden="true" hint="COM_TS_FORM_LBL_REGISTER_REG_STATUS"/>
+    <field name="date_submitted" type="timecreated" label="COM_TS_FORM_LBL_REGISTER_DATE_SUBMITTED" description="COM_TS_FORM_DESC_REGISTER_DATE_SUBMITTED" hidden="true" hint="COM_TS_FORM_LBL_REGISTER_DATE_SUBMITTED"/>
+    <field name="league_affiliation" default="NULL" label="COM_TS_FORM_LBL_REGISTER_LEAGUE_AFFILIATION" description="COM_TS_FORM_DESC_REGISTER_LEAGUE_AFFILIATION" hidden="true" hint="COM_TS_FORM_LBL_REGISTER_LEAGUE_AFFILIATION"/>
+    <field name="email_2" default="NULL" label="COM_TS_FORM_LBL_REGISTER_EMAIL_2" description="COM_TS_FORM_DESC_REGISTER_EMAIL_2" hidden="true" hint="COM_TS_FORM_LBL_REGISTER_EMAIL_2"/>
+    <field name="comments" default="NULL" label="COM_TS_FORM_LBL_REGISTER_COMMENTS" description="COM_TS_FORM_DESC_REGISTER_COMMENTS" hint="COM_TS_FORM_LBL_REGISTER_COMMENTS"/>
+    <field name="cell_phone_1" default="NULL" label="COM_TS_FORM_LBL_REGISTER_CELL_PHONE_1" description="COM_TS_FORM_DESC_REGISTER_CELL_PHONE_1" hint="COM_TS_FORM_LBL_REGISTER_CELL_PHONE_1"/>
+    <field name="version_note" type="text" label="JGLOBAL_FIELD_VERSION_NOTE_LABEL" description="JGLOBAL_FIELD_VERSION_NOTE_DESC" class="inputbox" size="45" labelclass="control-label"/>
+  </fieldset>
+</form>

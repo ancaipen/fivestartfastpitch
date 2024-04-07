@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form addfieldprefix="Teamtournaments\Component\Ts\Site\Field">
+  <fieldset>
+    <field name="id" type="text" readonly="true" class="readonly" default="0" description="JGLOBAL_FIELD_ID_DESC"/>
+    <field name="state" default="1" type="list" label="JSTATUS" description="JFIELD_PUBLISHED_DESC" class="inputbox" size="1">
+      <option value="1">JPUBLISHED</option>
+      <option value="0">JUNPUBLISHED</option>
+      <option value="2">JARCHIVED</option>
+      <option value="-2">JTRASHED</option>
+    </field>
+    <field name="ordering"/>
+    <field name="checked_out" type="hidden" filter="unset"/>
+    <field name="checked_out_time" type="hidden" filter="unset"/>
+    <field name="tournament_cost" default="NULL" label="COM_TS_FORM_LBL_TOURNAMENTAGECOST_TOURNAMENT_COST" description="COM_TS_FORM_DESC_TOURNAMENTAGECOST_TOURNAMENT_COST" hint="COM_TS_FORM_LBL_TOURNAMENTAGECOST_TOURNAMENT_COST"/>
+    <field name="tourn_capacity" default="NULL" label="COM_TS_FORM_LBL_TOURNAMENTAGECOST_TOURN_CAPACITY" description="COM_TS_FORM_DESC_TOURNAMENTAGECOST_TOURN_CAPACITY" hint="COM_TS_FORM_LBL_TOURNAMENTAGECOST_TOURN_CAPACITY"/>
+    <field name="field_location_description" default="NULL" editor="|" buttons="false" filter="JComponentHelper::filterText" type="editor" label="COM_TS_FORM_LBL_TOURNAMENTAGECOST_FIELD_LOCATION_DESCRIPTION" description="COM_TS_FORM_DESC_TOURNAMENTAGECOST_FIELD_LOCATION_DESCRIPTION" hint="COM_TS_FORM_LBL_TOURNAMENTAGECOST_FIELD_LOCATION_DESCRIPTION"/>
+    <field name="tournament_results" default="NULL" editor="|" buttons="false" filter="JComponentHelper::filterText" type="editor" label="COM_TS_FORM_LBL_TOURNAMENTAGECOST_TOURNAMENT_RESULTS" description="COM_TS_FORM_DESC_TOURNAMENTAGECOST_TOURNAMENT_RESULTS" hint="COM_TS_FORM_LBL_TOURNAMENTAGECOST_TOURNAMENT_RESULTS"/>
+    <field name="age_id" query="SELECT * FROM `#__ts_age` WHERE 1" key_field="age_num" value_field="age" type="sql" layout="joomla.form.field.list-fancy-select" label="COM_TS_FORM_LBL_TOURNAMENTAGECOST_AGE_ID" description="COM_TS_FORM_DESC_TOURNAMENTAGECOST_AGE_ID" hint="COM_TS_FORM_LBL_TOURNAMENTAGECOST_AGE_ID"/>
+    <field name="tournament_id" query="SELECT * FROM `#__ts_tournament` WHERE 1" key_field="tournament_id" value_field="tournament_name" type="sql" layout="joomla.form.field.list-fancy-select" label="COM_TS_FORM_LBL_TOURNAMENTAGECOST_TOURNAMENT_ID" description="COM_TS_FORM_DESC_TOURNAMENTAGECOST_TOURNAMENT_ID" hint="COM_TS_FORM_LBL_TOURNAMENTAGECOST_TOURNAMENT_ID"/>
+    <field name="version_note" type="text" label="JGLOBAL_FIELD_VERSION_NOTE_LABEL" description="JGLOBAL_FIELD_VERSION_NOTE_DESC" class="inputbox" size="45" labelclass="control-label"/>
+  </fieldset>
+</form>

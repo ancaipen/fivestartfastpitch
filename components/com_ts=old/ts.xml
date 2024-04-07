@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="2.5.0" client="site" method="upgrade">
+ <name>5 Star Tournies</name>
+ <!-- The following elements are optional and free of formatting constraints -->
+ <creationDate>2016-05-22</creationDate>
+ <author>Aaron Caipen</author>
+ <authorEmail>acaipen@enetohio.com</authorEmail>
+ <authorUrl>http://www.enetohio.com/</authorUrl>
+ <copyright>5.22.2016</copyright>
+ <license>Oxbow Technologies</license>
+ <!--  The version string is recorded in the components table -->
+ <version>1.00</version>
+ <!-- The description is optional and defaults to the name -->
+ <description>This component displays all 5 Star Tournies information.</description>
+
+ <!-- Site Main File Copy Section -->
+ <!-- Note the folder attribute: This attribute describes the folder
+      to copy FROM in the package to install therefore files copied
+      in this section are copied from /site/ in the package -->
+ <files folder="site">
+  <filename>controller.php</filename>
+  <filename>ts.php</filename>
+  <filename>index.html</filename>
+  <filename>models/index.html</filename>
+  <filename>models/schedule_results.php</filename>
+  <filename>views/index.html</filename>
+  <filename>views/schedule_results/index.html</filename>
+  <filename>views/schedule_results/view.html.php</filename>
+  <filename>views/schedule_results/tmpl/default.php</filename>
+  <filename>views/schedule_results/tmpl/index.html</filename>
+ </files>
+
+ <administration>
+  <!-- Administration Menu Section -->
+  <menu>5 Star Tournies</menu>
+
+  <!-- Administration Main File Copy Section -->
+  <files folder="admin">
+   <filename>ts.php</filename>
+   <filename>index.html</filename>
+  </files>
+
+ </administration>
+</extension>

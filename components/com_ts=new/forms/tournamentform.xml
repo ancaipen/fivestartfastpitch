@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form addfieldprefix="Teamtournaments\Component\Ts\Site\Field">
+  <fieldset>
+    <field name="id" type="text" readonly="true" class="readonly" default="0" description="JGLOBAL_FIELD_ID_DESC"/>
+    <field name="state" default="1" type="list" label="JSTATUS" description="JFIELD_PUBLISHED_DESC" class="inputbox" size="1">
+      <option value="1">JPUBLISHED</option>
+      <option value="0">JUNPUBLISHED</option>
+      <option value="2">JARCHIVED</option>
+      <option value="-2">JTRASHED</option>
+    </field>
+    <field name="ordering"/>
+    <field name="checked_out" type="hidden" filter="unset"/>
+    <field name="checked_out_time" type="hidden" filter="unset"/>
+    <field name="tournament_name" filter="safehtml" type="text" required="true" label="COM_TS_FORM_LBL_TOURNAMENT_TOURNAMENT_NAME" description="COM_TS_FORM_DESC_TOURNAMENT_TOURNAMENT_NAME" hint="COM_TS_FORM_LBL_TOURNAMENT_TOURNAMENT_NAME"/>
+    <field name="tournament_start_date" default="NULL" type="calendar" class="inputbox" filter="safehtml" label="COM_TS_FORM_LBL_TOURNAMENT_TOURNAMENT_START_DATE" description="COM_TS_FORM_DESC_TOURNAMENT_TOURNAMENT_START_DATE" hint="COM_TS_FORM_LBL_TOURNAMENT_TOURNAMENT_START_DATE"/>
+    <field name="tournament_end_date" default="NULL" type="calendar" class="inputbox" filter="safehtml" label="COM_TS_FORM_LBL_TOURNAMENT_TOURNAMENT_END_DATE" description="COM_TS_FORM_DESC_TOURNAMENT_TOURNAMENT_END_DATE" hint="COM_TS_FORM_LBL_TOURNAMENT_TOURNAMENT_END_DATE"/>
+    <field name="tournament_description" editor="|" buttons="false" filter="JComponentHelper::filterText" type="editor" label="COM_TS_FORM_LBL_TOURNAMENT_TOURNAMENT_DESCRIPTION" description="COM_TS_FORM_DESC_TOURNAMENT_TOURNAMENT_DESCRIPTION" hint="COM_TS_FORM_LBL_TOURNAMENT_TOURNAMENT_DESCRIPTION"/>
+    <field name="teams_registered" editor="|" buttons="false" filter="JComponentHelper::filterText" type="editor" label="COM_TS_FORM_LBL_TOURNAMENT_TEAMS_REGISTERED" description="COM_TS_FORM_DESC_TOURNAMENT_TEAMS_REGISTERED" hint="COM_TS_FORM_LBL_TOURNAMENT_TEAMS_REGISTERED"/>
+    <field name="season_id" label="COM_TS_FORM_LBL_TOURNAMENT_SEASON_ID" description="COM_TS_FORM_DESC_TOURNAMENT_SEASON_ID" hint="COM_TS_FORM_LBL_TOURNAMENT_SEASON_ID"/>
+    <field name="tournament_notes" default="NULL" editor="|" buttons="false" filter="JComponentHelper::filterText" type="editor" label="COM_TS_FORM_LBL_TOURNAMENT_TOURNAMENT_NOTES" description="COM_TS_FORM_DESC_TOURNAMENT_TOURNAMENT_NOTES" hint="COM_TS_FORM_LBL_TOURNAMENT_TOURNAMENT_NOTES"/>
+    <field name="is_deleted" default="NULL" label="COM_TS_FORM_LBL_TOURNAMENT_IS_DELETED" description="COM_TS_FORM_DESC_TOURNAMENT_IS_DELETED" hint="COM_TS_FORM_LBL_TOURNAMENT_IS_DELETED"/>
+    <field name="tournament_complete" type="checkbox" checked="0" label="COM_TS_FORM_LBL_TOURNAMENT_TOURNAMENT_COMPLETE" description="COM_TS_FORM_DESC_TOURNAMENT_TOURNAMENT_COMPLETE" hint="COM_TS_FORM_LBL_TOURNAMENT_TOURNAMENT_COMPLETE"/>
+    <field name="version_note" type="text" label="JGLOBAL_FIELD_VERSION_NOTE_LABEL" description="JGLOBAL_FIELD_VERSION_NOTE_DESC" class="inputbox" size="45" labelclass="control-label"/>
+  </fieldset>
+</form>

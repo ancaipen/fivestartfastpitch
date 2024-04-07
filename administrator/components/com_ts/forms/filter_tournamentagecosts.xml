@@ -1,48 +1,48 @@
-<?xml version="1.0" encoding="utf-8"?>
-<form>
-    <fields name="filter">
-        <field name="search" type="text" description="COM_TS_SEARCH_FILTER_SUBMIT"
-               label="COM_USERS_FILTER_SEARCH_DESC"
-               class="js-stools-search-string" />
-
-        <field name="state"
-               type="status"
-               label="COM_TS_FILTER_STATE"
-               description="COM_TS_FILTER_STATE_DESC"
-               onchange="this.form.submit();"
-        >
-            <option value="">JOPTION_SELECT_PUBLISHED</option>
-        </field>
-
-        <field name="age_id" label="COM_TS_FORM_LBL_TOURNAMENTAGECOST_AGE_ID" type="sql" query="SELECT * FROM `#__ts_age` WHERE 1" header="COM_TS_TOURNAMENTAGECOSTS_AGE_ID_FILTER" translate="true" key_field="age_num" value_field="age" onchange="this.form.submit();"/>
-<field name="tournament_id" label="COM_TS_FORM_LBL_TOURNAMENTAGECOST_TOURNAMENT_ID" type="sql" query="SELECT * FROM `#__ts_tournament` WHERE 1" header="COM_TS_TOURNAMENTAGECOSTS_TOURNAMENT_ID_FILTER" translate="true" key_field="id" value_field="tournament_name" onchange="this.form.submit();"/>
-
-
-    </fields>
-
-    <fields name="list">
-
-        <field name="fullordering"
-               type="list"
-               label="COM_TS_LIST_FULL_ORDERING"
-               description="COM_TS_LIST_FULL_ORDERING_DESC"
-               onchange="this.form.submit();"
-               default="a.id DESC"
-        >
-            <option value="">JGLOBAL_SORT_BY</option>
-            <option value="a.id ASC">COM_TS_ID_ASC</option><option value="a.id DESC">COM_TS_ID_DESC</option><option value="a.state ASC">COM_TS_STATE_ASC</option><option value="a.state DESC">COM_TS_STATE_DESC</option><option value="a.ordering ASC">COM_TS_ORDERING_ASC</option><option value="a.ordering DESC">COM_TS_ORDERING_DESC</option><option value="a.age_id ASC">COM_TS_AGE_ID_ASC</option><option value="a.age_id DESC">COM_TS_AGE_ID_DESC</option><option value="a.tournament_id ASC">COM_TS_TOURNAMENT_ID_ASC</option><option value="a.tournament_id DESC">COM_TS_TOURNAMENT_ID_DESC</option>
-
-        </field>
-
-       <field name="limit"
-               type="limitbox"
-               label="COM_TS_LIST_LIMIT"
-               description="COM_TS_LIST_LIMIT_DESC"
-               class="input-mini"
-               default="25"
-               onchange="this.form.submit();"
-        />
-
-    </fields>
-
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fields name="filter">
+        <field name="search" type="text" description="COM_TS_SEARCH_FILTER_SUBMIT"
+               label="COM_USERS_FILTER_SEARCH_DESC"
+               class="js-stools-search-string" />
+
+        <field name="state"
+               type="status"
+               label="COM_TS_FILTER_STATE"
+               description="COM_TS_FILTER_STATE_DESC"
+               onchange="this.form.submit();"
+        >
+            <option value="">JOPTION_SELECT_PUBLISHED</option>
+        </field>
+
+        <field name="age_id" label="COM_TS_FORM_LBL_TOURNAMENTAGECOST_AGE_ID" type="sql" query="SELECT * FROM `#__ts_age` WHERE 1" header="COM_TS_TOURNAMENTAGECOSTS_AGE_ID_FILTER" translate="true" key_field="age_id" value_field="age" onchange="this.form.submit();"/>
+<field name="tournament_id" label="COM_TS_FORM_LBL_TOURNAMENTAGECOST_TOURNAMENT_ID" type="sql" query="SELECT DISTINCT a.*,s.* FROM `#__ts_tournament` AS a INNER JOIN `#__ts_season` AS `s` ON `s`.`season_id` = `a`.`season_id` WHERE s.season_current = 1 AND (a.is_deleted = 0 OR a.is_deleted IS NULL) AND (a.state IN (0, 1)) ORDER BY a.tournament_name" header="COM_TS_TOURNAMENTAGECOSTS_TOURNAMENT_ID_FILTER" translate="true" key_field="id" value_field="tournament_name" onchange="this.form.submit();"/>
+
+
+    </fields>
+
+    <fields name="list">
+
+        <field name="fullordering"
+               type="list"
+               label="COM_TS_LIST_FULL_ORDERING"
+               description="COM_TS_LIST_FULL_ORDERING_DESC"
+               onchange="this.form.submit();"
+               default="a.id DESC"
+        >
+            <option value="">JGLOBAL_SORT_BY</option>
+            <option value="a.id ASC">COM_TS_ID_ASC</option><option value="a.id DESC">COM_TS_ID_DESC</option><option value="a.state ASC">COM_TS_STATE_ASC</option><option value="a.state DESC">COM_TS_STATE_DESC</option><option value="a.ordering ASC">COM_TS_ORDERING_ASC</option><option value="a.ordering DESC">COM_TS_ORDERING_DESC</option><option value="a.age_id ASC">COM_TS_AGE_ID_ASC</option><option value="a.age_id DESC">COM_TS_AGE_ID_DESC</option><option value="a.tournament_id ASC">COM_TS_TOURNAMENT_ID_ASC</option><option value="a.tournament_id DESC">COM_TS_TOURNAMENT_ID_DESC</option>
+
+        </field>
+
+       <field name="limit"
+               type="limitbox"
+               label="COM_TS_LIST_LIMIT"
+               description="COM_TS_LIST_LIMIT_DESC"
+               class="input-mini"
+               default="25"
+               onchange="this.form.submit();"
+        />
+
+    </fields>
+
 </form>

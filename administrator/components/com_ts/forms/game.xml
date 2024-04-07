@@ -1,153 +1,153 @@
-<?xml version="1.0" encoding="utf-8"?>
-<form addfieldprefix="Teamtournaments\Component\Ts\Administrator\Field">
-  <fieldset>
-    <field name="id" type="text" readonly="true" class="readonly" default="0" description="JGLOBAL_FIELD_ID_DESC"/>
-    <field name="state" default="1" type="list" label="JSTATUS" description="JFIELD_PUBLISHED_DESC" class="inputbox" size="1">
-      <option value="1">JPUBLISHED</option>
-      <option value="0">JUNPUBLISHED</option>
-      <option value="2">JARCHIVED</option>
-      <option value="-2">JTRASHED</option>
-    </field>
-    <field name="ordering"/>
-    <field name="checked_out" type="hidden" filter="unset"/>
-    <field name="checked_out_time" type="hidden" filter="unset"/>
-    <field name="created_by" type="createdby" default="0" label="JGLOBAL_FIELD_CREATED_BY_LABEL" description="JGLOBAL_FIELD_CREATED_BY_DESC" hidden="true" hint="COM_TS_FORM_LBL_GAME_CREATED_BY"/>
-    <field name="modified_by" type="modifiedby" default="0" label="JGLOBAL_FIELD_MODIFIED_BY_LABEL" description="JGLOBAL_FIELD_MODIFIED_BY_DESC" hidden="true" hint="COM_TS_FORM_LBL_GAME_MODIFIED_BY"/>
-    <field name="home_seed" default="" label="COM_TS_FORM_LBL_GAME_HOME_SEED" description="COM_TS_FORM_DESC_GAME_HOME_SEED" hidden="true" hint="COM_TS_FORM_LBL_GAME_HOME_SEED"/>
-    <field name="visitor_seed" default="" label="COM_TS_FORM_LBL_GAME_VISITOR_SEED" description="COM_TS_FORM_DESC_GAME_VISITOR_SEED" hidden="true" hint="COM_TS_FORM_LBL_GAME_VISITOR_SEED"/>
-    <field name="home_team" filter="safehtml" type="text" required="true" label="COM_TS_FORM_LBL_GAME_HOME_TEAM" description="COM_TS_FORM_DESC_GAME_HOME_TEAM" hint="COM_TS_FORM_LBL_GAME_HOME_TEAM"/>
-    <field name="visitor_team" default="NULL" filter="safehtml" type="text" label="COM_TS_FORM_LBL_GAME_VISITOR_TEAM" description="COM_TS_FORM_DESC_GAME_VISITOR_TEAM" hint="COM_TS_FORM_LBL_GAME_VISITOR_TEAM"/>
-    <field name="home_pool" type="list" label="COM_TS_FORM_LBL_GAME_HOME_POOL" description="COM_TS_FORM_DESC_GAME_HOME_POOL" hint="COM_TS_FORM_LBL_GAME_HOME_POOL">
-      <option value="A">COM_TS_GAMES_HOME_POOL_OPTION_A</option>
-      <option value="B">COM_TS_GAMES_HOME_POOL_OPTION_B</option>
-      <option value="C">COM_TS_GAMES_HOME_POOL_OPTION_C</option>
-      <option value="D">COM_TS_GAMES_HOME_POOL_OPTION_D</option>
-      <option value="E">COM_TS_GAMES_HOME_POOL_OPTION_E</option>
-      <option value="F">COM_TS_GAMES_HOME_POOL_OPTION_F</option>
-      <option value="G">COM_TS_GAMES_HOME_POOL_OPTION_G</option>
-      <option value="H">COM_TS_GAMES_HOME_POOL_OPTION_H</option>
-      <option value="I">COM_TS_GAMES_HOME_POOL_OPTION_I</option>
-      <option value="J">COM_TS_GAMES_HOME_POOL_OPTION_J</option>
-      <option value="K">COM_TS_GAMES_HOME_POOL_OPTION_K</option>
-      <option value="L">COM_TS_GAMES_HOME_POOL_OPTION_L</option>
-      <option value="M">COM_TS_GAMES_HOME_POOL_OPTION_M</option>
-      <option value="N">COM_TS_GAMES_HOME_POOL_OPTION_N</option>
-      <option value="O">COM_TS_GAMES_HOME_POOL_OPTION_O</option>
-    </field>
-    <field name="game_date" type="calendar" class="inputbox" format="%Y-%m-%d" translateformat="true" label="COM_TS_FORM_LBL_GAME_GAME_DATE" description="COM_TS_FORM_DESC_GAME_GAME_DATE" hint="COM_TS_FORM_LBL_GAME_GAME_DATE"/>
-    <field name="game_type" type="list" label="COM_TS_FORM_LBL_GAME_GAME_TYPE" description="COM_TS_FORM_DESC_GAME_GAME_TYPE" hint="COM_TS_FORM_LBL_GAME_GAME_TYPE">
-      <option value="Pool">COM_TS_GAMES_GAME_TYPE_OPTION_POOL</option>
-      <option value="Silver Bracket">COM_TS_GAMES_GAME_TYPE_OPTION_SILVER_BRACKET</option>
-      <option value="Silver Bracket Game 1">COM_TS_GAMES_GAME_TYPE_OPTION_SILVER_BRACKET_GAME_1</option>
-      <option value="Silver Bracket Game 2">COM_TS_GAMES_GAME_TYPE_OPTION_SILVER_BRACKET_GAME_2</option>
-      <option value="Silver Bracket Game 3">COM_TS_GAMES_GAME_TYPE_OPTION_SILVER_BRACKET_GAME_3</option>
-      <option value="Silver Bracket Game 4">COM_TS_GAMES_GAME_TYPE_OPTION_SILVER_BRACKET_GAME_4</option>
-      <option value="Silver Bracket Game 5">COM_TS_GAMES_GAME_TYPE_OPTION_SILVER_BRACKET_GAME_5</option>
-      <option value="Silver Bracket Game 6">COM_TS_GAMES_GAME_TYPE_OPTION_SILVER_BRACKET_GAME_6</option>
-      <option value="Silver Bracket Game 7">COM_TS_GAMES_GAME_TYPE_OPTION_SILVER_BRACKET_GAME_7</option>
-      <option value="Silver Bracket Game 8">COM_TS_GAMES_GAME_TYPE_OPTION_SILVER_BRACKET_GAME_8</option>
-      <option value="Silver Bracket Game 9">COM_TS_GAMES_GAME_TYPE_OPTION_SILVER_BRACKET_GAME_9</option>
-      <option value="Silver Bracket Game 10">COM_TS_GAMES_GAME_TYPE_OPTION_SILVER_BRACKET_GAME_10</option>
-      <option value="Silver Bracket Game 11">COM_TS_GAMES_GAME_TYPE_OPTION_SILVER_BRACKET_GAME_11</option>
-      <option value="Silver Bracket Game 12">COM_TS_GAMES_GAME_TYPE_OPTION_SILVER_BRACKET_GAME_12</option>
-      <option value="Silver Bracket Game 13">COM_TS_GAMES_GAME_TYPE_OPTION_SILVER_BRACKET_GAME_13</option>
-      <option value="Silver Bracket Game 14">COM_TS_GAMES_GAME_TYPE_OPTION_SILVER_BRACKET_GAME_14</option>
-      <option value="Silver Bracket Game 15">COM_TS_GAMES_GAME_TYPE_OPTION_SILVER_BRACKET_GAME_15</option>
-      <option value="Silver Bracket Game 16">COM_TS_GAMES_GAME_TYPE_OPTION_SILVER_BRACKET_GAME_16</option>
-      <option value="Consolation">COM_TS_GAMES_GAME_TYPE_OPTION_CONSOLATION</option>
-      <option value="Consolation Game 1">COM_TS_GAMES_GAME_TYPE_OPTION_CONSOLATION_GAME_1</option>
-      <option value="Consolation Game 2">COM_TS_GAMES_GAME_TYPE_OPTION_CONSOLATION_GAME_2</option>
-      <option value="Consolation Game 3">COM_TS_GAMES_GAME_TYPE_OPTION_CONSOLATION_GAME_3</option>
-      <option value="Consolation Game 4">COM_TS_GAMES_GAME_TYPE_OPTION_CONSOLATION_GAME_4</option>
-      <option value="Consolation Game 5">COM_TS_GAMES_GAME_TYPE_OPTION_CONSOLATION_GAME_5</option>
-      <option value="Consolation Game 6">COM_TS_GAMES_GAME_TYPE_OPTION_CONSOLATION_GAME_6</option>
-      <option value="Consolation Game 7">COM_TS_GAMES_GAME_TYPE_OPTION_CONSOLATION_GAME_7</option>
-      <option value="Consolation Game 8">COM_TS_GAMES_GAME_TYPE_OPTION_CONSOLATION_GAME_8</option>
-      <option value="Consolation Game 9">COM_TS_GAMES_GAME_TYPE_OPTION_CONSOLATION_GAME_9</option>
-      <option value="Consolation Game 10">COM_TS_GAMES_GAME_TYPE_OPTION_CONSOLATION_GAME_10</option>
-      <option value="Consolation Game 11">COM_TS_GAMES_GAME_TYPE_OPTION_CONSOLATION_GAME_11</option>
-      <option value="Consolation Game 12">COM_TS_GAMES_GAME_TYPE_OPTION_CONSOLATION_GAME_12</option>
-      <option value="Consolation Game 13">COM_TS_GAMES_GAME_TYPE_OPTION_CONSOLATION_GAME_13</option>
-      <option value="Consolation Game 14">COM_TS_GAMES_GAME_TYPE_OPTION_CONSOLATION_GAME_14</option>
-      <option value="Consolation Game 15">COM_TS_GAMES_GAME_TYPE_OPTION_CONSOLATION_GAME_15</option>
-      <option value="Consolation Game 16">COM_TS_GAMES_GAME_TYPE_OPTION_CONSOLATION_GAME_16</option>
-      <option value="Consolation Game 17">COM_TS_GAMES_GAME_TYPE_OPTION_CONSOLATION_GAME_17</option>
-      <option value="Consolation Game 18">COM_TS_GAMES_GAME_TYPE_OPTION_CONSOLATION_GAME_18</option>
-      <option value="Consolation Game 19">COM_TS_GAMES_GAME_TYPE_OPTION_CONSOLATION_GAME_19</option>
-      <option value="Consolation Game 20">COM_TS_GAMES_GAME_TYPE_OPTION_CONSOLATION_GAME_20</option>
-      <option value="Championship">COM_TS_GAMES_GAME_TYPE_OPTION_CHAMPIONSHIP</option>
-      <option value="Championship Game 1">COM_TS_GAMES_GAME_TYPE_OPTION_CHAMPIONSHIP_GAME_1</option>
-      <option value="Championship Game 2">COM_TS_GAMES_GAME_TYPE_OPTION_CHAMPIONSHIP_GAME_2</option>
-      <option value="Championship Game 3">COM_TS_GAMES_GAME_TYPE_OPTION_CHAMPIONSHIP_GAME_3</option>
-      <option value="Championship Game 4">COM_TS_GAMES_GAME_TYPE_OPTION_CHAMPIONSHIP_GAME_4</option>
-      <option value="Championship Game 5">COM_TS_GAMES_GAME_TYPE_OPTION_CHAMPIONSHIP_GAME_5</option>
-      <option value="Championship Game 6">COM_TS_GAMES_GAME_TYPE_OPTION_CHAMPIONSHIP_GAME_6</option>
-      <option value="Championship Game 7">COM_TS_GAMES_GAME_TYPE_OPTION_CHAMPIONSHIP_GAME_7</option>
-      <option value="Championship Game 8">COM_TS_GAMES_GAME_TYPE_OPTION_CHAMPIONSHIP_GAME_8</option>
-      <option value="Championship Game 9">COM_TS_GAMES_GAME_TYPE_OPTION_CHAMPIONSHIP_GAME_9</option>
-      <option value="Championship Game 10">COM_TS_GAMES_GAME_TYPE_OPTION_CHAMPIONSHIP_GAME_10</option>
-      <option value="Championship Game 11">COM_TS_GAMES_GAME_TYPE_OPTION_CHAMPIONSHIP_GAME_11</option>
-      <option value="Championship Game 12">COM_TS_GAMES_GAME_TYPE_OPTION_CHAMPIONSHIP_GAME_12</option>
-      <option value="Championship Game 13">COM_TS_GAMES_GAME_TYPE_OPTION_CHAMPIONSHIP_GAME_13</option>
-      <option value="Championship Game 14">COM_TS_GAMES_GAME_TYPE_OPTION_CHAMPIONSHIP_GAME_14</option>
-      <option value="Championship Game 15">COM_TS_GAMES_GAME_TYPE_OPTION_CHAMPIONSHIP_GAME_15</option>
-      <option value="Championship Game 16">COM_TS_GAMES_GAME_TYPE_OPTION_CHAMPIONSHIP_GAME_16</option>
-      <option value="Championship Game 17">COM_TS_GAMES_GAME_TYPE_OPTION_CHAMPIONSHIP_GAME_17</option>
-      <option value="Championship Game 18">COM_TS_GAMES_GAME_TYPE_OPTION_CHAMPIONSHIP_GAME_18</option>
-      <option value="Championship Game 19">COM_TS_GAMES_GAME_TYPE_OPTION_CHAMPIONSHIP_GAME_19</option>
-      <option value="Championship Game 20">COM_TS_GAMES_GAME_TYPE_OPTION_CHAMPIONSHIP_GAME_20</option>
-      <option value="Championship Game 21">COM_TS_GAMES_GAME_TYPE_OPTION_CHAMPIONSHIP_GAME_21</option>
-      <option value="Championship Game 22">COM_TS_GAMES_GAME_TYPE_OPTION_CHAMPIONSHIP_GAME_22</option>
-      <option value="Championship Game 23">COM_TS_GAMES_GAME_TYPE_OPTION_CHAMPIONSHIP_GAME_23</option>
-      <option value="Championship Game 24">COM_TS_GAMES_GAME_TYPE_OPTION_CHAMPIONSHIP_GAME_24</option>
-      <option value="Championship Game 25">COM_TS_GAMES_GAME_TYPE_OPTION_CHAMPIONSHIP_GAME_25</option>
-      <option value="Bronze Bracket">COM_TS_GAMES_GAME_TYPE_OPTION_BRONZE_BRACKET</option>
-      <option value="Bronze Bracket 1">COM_TS_GAMES_GAME_TYPE_OPTION_BRONZE_BRACKET_1</option>
-      <option value="Bronze Bracket 2">COM_TS_GAMES_GAME_TYPE_OPTION_BRONZE_BRACKET_2</option>
-      <option value="Bronze Bracket 3">COM_TS_GAMES_GAME_TYPE_OPTION_BRONZE_BRACKET_3</option>
-      <option value="Bronze Bracket 4">COM_TS_GAMES_GAME_TYPE_OPTION_BRONZE_BRACKET_4</option>
-      <option value="Bronze Bracket 5">COM_TS_GAMES_GAME_TYPE_OPTION_BRONZE_BRACKET_5</option>
-      <option value="Bronze Bracket 6">COM_TS_GAMES_GAME_TYPE_OPTION_BRONZE_BRACKET_6</option>
-      <option value="Bronze Bracket 7">COM_TS_GAMES_GAME_TYPE_OPTION_BRONZE_BRACKET_7</option>
-      <option value="Bronze Bracket 8">COM_TS_GAMES_GAME_TYPE_OPTION_BRONZE_BRACKET_8</option>
-      <option value="Bronze Bracket 9">COM_TS_GAMES_GAME_TYPE_OPTION_BRONZE_BRACKET_9</option>
-      <option value="Bronze Bracket 10">COM_TS_GAMES_GAME_TYPE_OPTION_BRONZE_BRACKET_10</option>
-      <option value="Bronze Bracket 11">COM_TS_GAMES_GAME_TYPE_OPTION_BRONZE_BRACKET_11</option>
-      <option value="Bronze Bracket 12">COM_TS_GAMES_GAME_TYPE_OPTION_BRONZE_BRACKET_12</option>
-      <option value="Bronze Bracket 13">COM_TS_GAMES_GAME_TYPE_OPTION_BRONZE_BRACKET_13</option>
-      <option value="Bronze Bracket 14">COM_TS_GAMES_GAME_TYPE_OPTION_BRONZE_BRACKET_14</option>
-      <option value="Bronze Bracket 15">COM_TS_GAMES_GAME_TYPE_OPTION_BRONZE_BRACKET_15</option>
-      <option value="Bronze Bracket 16">COM_TS_GAMES_GAME_TYPE_OPTION_BRONZE_BRACKET_16</option>
-    </field>
-    <field name="field_location" type="text"  class="inputbox" label="COM_TS_FORM_LBL_GAME_FIELD_LOCATION" description="COM_TS_FORM_DESC_GAME_FIELD_LOCATION" hint="COM_TS_FORM_LBL_GAME_FIELD_LOCATION"/>
-    <field name="home_score" default="" label="COM_TS_FORM_LBL_GAME_HOME_SCORE" description="COM_TS_FORM_DESC_GAME_HOME_SCORE" hint="COM_TS_FORM_LBL_GAME_HOME_SCORE"/>
-    <field name="visitor_score" default="" label="COM_TS_FORM_LBL_GAME_VISITOR_SCORE" description="COM_TS_FORM_DESC_GAME_VISITOR_SCORE" hint="COM_TS_FORM_LBL_GAME_VISITOR_SCORE"/>
-    <field name="notes" default="" editor="|" buttons="false" filter="JComponentHelper::filterText" type="editor" label="COM_TS_FORM_LBL_GAME_NOTES" description="COM_TS_FORM_DESC_GAME_NOTES" hint="COM_TS_FORM_LBL_GAME_NOTES"/>
-    <field name="age_id" query="SELECT * FROM `#__ts_age` WHERE 1 ORDER BY age_num" key_field="age_id" value_field="age" type="sql" layout="joomla.form.field.list-fancy-select" label="COM_TS_FORM_LBL_GAME_AGE_ID" description="COM_TS_FORM_DESC_GAME_AGE_ID" hint="COM_TS_FORM_LBL_GAME_AGE_ID"/>
-
-    <field name="tournament_id" query="SELECT * FROM #__ts_tournament t
-    INNER JOIN #__ts_season s on s.season_id=t.season_id
-    WHERE s.season_current = 1" key_field="id" value_field="tournament_name" type="sql" layout="joomla.form.field.list-fancy-select" label="COM_TS_FORM_LBL_GAME_TOURNAMENT_ID" description="COM_TS_FORM_DESC_GAME_TOURNAMENT_ID" hint="COM_TS_FORM_LBL_GAME_TOURNAMENT_ID"/>
-    <field name="visitor_pool" type="list" label="COM_TS_FORM_LBL_GAME_VISITOR_POOL" description="COM_TS_FORM_DESC_GAME_VISITOR_POOL" hint="COM_TS_FORM_LBL_GAME_VISITOR_POOL">
-      <option value="A">COM_TS_GAMES_VISITOR_POOL_OPTION_A</option>
-      <option value="B">COM_TS_GAMES_VISITOR_POOL_OPTION_B</option>
-      <option value="C">COM_TS_GAMES_VISITOR_POOL_OPTION_C</option>
-      <option value="D">COM_TS_GAMES_VISITOR_POOL_OPTION_D</option>
-      <option value="E">COM_TS_GAMES_VISITOR_POOL_OPTION_E</option>
-      <option value="F">COM_TS_GAMES_VISITOR_POOL_OPTION_F</option>
-      <option value="G">COM_TS_GAMES_VISITOR_POOL_OPTION_G</option>
-      <option value="H">COM_TS_GAMES_VISITOR_POOL_OPTION_H</option>
-      <option value="I">COM_TS_GAMES_VISITOR_POOL_OPTION_I</option>
-      <option value="J">COM_TS_GAMES_VISITOR_POOL_OPTION_J</option>
-      <option value="K">COM_TS_GAMES_VISITOR_POOL_OPTION_K</option>
-      <option value="L">COM_TS_GAMES_VISITOR_POOL_OPTION_L</option>
-      <option value="M">COM_TS_GAMES_VISITOR_POOL_OPTION_M</option>
-      <option value="N">COM_TS_GAMES_VISITOR_POOL_OPTION_N</option>
-      <option value="O">COM_TS_GAMES_VISITOR_POOL_OPTION_O</option>
-    </field>
-    <field name="game_time" getdatefrom="game_date" type="calendartimeonly" class="inputbox" format="%Y-%m-%d %I:%M:%S %p" timeformat="12" showtime="true" translateformat="true" label="COM_TS_FORM_LBL_GAME_GAME_TIME" description="COM_TS_FORM_DESC_GAME_GAME_TIME" hint="COM_TS_FORM_LBL_GAME_GAME_TIME"/>
-    <field name="game_order" label="COM_TS_FORM_LBL_GAME_GAME_ORDER" description="COM_TS_FORM_DESC_GAME_GAME_ORDER" hint="COM_TS_FORM_LBL_GAME_GAME_ORDER"/>
-    <field name="game_active" type="checkbox" checked="0" label="COM_TS_FORM_LBL_GAME_GAME_ACTIVE" description="COM_TS_FORM_DESC_GAME_GAME_ACTIVE" hint="COM_TS_FORM_LBL_GAME_GAME_ACTIVE"/>
-    <field name="version_note" type="text" label="JGLOBAL_FIELD_VERSION_NOTE_LABEL" description="JGLOBAL_FIELD_VERSION_NOTE_DESC" class="inputbox" size="45" labelclass="control-label"/>
-  </fieldset>
-</form>
+<?xml version="1.0" encoding="utf-8"?>
+<form addfieldprefix="Teamtournaments\Component\Ts\Administrator\Field">
+  <fieldset>
+    <field name="id" type="text" readonly="true" class="readonly" default="0" description="JGLOBAL_FIELD_ID_DESC"/>
+    <field name="state" default="1" type="list" label="JSTATUS" description="JFIELD_PUBLISHED_DESC" class="inputbox" size="1">
+      <option value="1">JPUBLISHED</option>
+      <option value="0">JUNPUBLISHED</option>
+      <option value="2">JARCHIVED</option>
+      <option value="-2">JTRASHED</option>
+    </field>
+    <field name="ordering"/>
+    <field name="checked_out" type="hidden" filter="unset"/>
+    <field name="checked_out_time" type="hidden" filter="unset"/>
+    <field name="created_by" type="createdby" default="0" label="JGLOBAL_FIELD_CREATED_BY_LABEL" description="JGLOBAL_FIELD_CREATED_BY_DESC" hidden="true" hint="COM_TS_FORM_LBL_GAME_CREATED_BY"/>
+    <field name="modified_by" type="modifiedby" default="0" label="JGLOBAL_FIELD_MODIFIED_BY_LABEL" description="JGLOBAL_FIELD_MODIFIED_BY_DESC" hidden="true" hint="COM_TS_FORM_LBL_GAME_MODIFIED_BY"/>
+    <field name="home_seed" default="" label="COM_TS_FORM_LBL_GAME_HOME_SEED" description="COM_TS_FORM_DESC_GAME_HOME_SEED" hidden="true" hint="COM_TS_FORM_LBL_GAME_HOME_SEED"/>
+    <field name="visitor_seed" default="" label="COM_TS_FORM_LBL_GAME_VISITOR_SEED" description="COM_TS_FORM_DESC_GAME_VISITOR_SEED" hidden="true" hint="COM_TS_FORM_LBL_GAME_VISITOR_SEED"/>
+    <field name="home_team" filter="safehtml" type="text" required="true" label="COM_TS_FORM_LBL_GAME_HOME_TEAM" description="COM_TS_FORM_DESC_GAME_HOME_TEAM" hint="COM_TS_FORM_LBL_GAME_HOME_TEAM"/>
+    <field name="visitor_team" default="NULL" filter="safehtml" type="text" label="COM_TS_FORM_LBL_GAME_VISITOR_TEAM" description="COM_TS_FORM_DESC_GAME_VISITOR_TEAM" hint="COM_TS_FORM_LBL_GAME_VISITOR_TEAM"/>
+    <field name="home_pool" type="list" label="COM_TS_FORM_LBL_GAME_HOME_POOL" description="COM_TS_FORM_DESC_GAME_HOME_POOL" hint="COM_TS_FORM_LBL_GAME_HOME_POOL">
+      <option value="A">COM_TS_GAMES_HOME_POOL_OPTION_A</option>
+      <option value="B">COM_TS_GAMES_HOME_POOL_OPTION_B</option>
+      <option value="C">COM_TS_GAMES_HOME_POOL_OPTION_C</option>
+      <option value="D">COM_TS_GAMES_HOME_POOL_OPTION_D</option>
+      <option value="E">COM_TS_GAMES_HOME_POOL_OPTION_E</option>
+      <option value="F">COM_TS_GAMES_HOME_POOL_OPTION_F</option>
+      <option value="G">COM_TS_GAMES_HOME_POOL_OPTION_G</option>
+      <option value="H">COM_TS_GAMES_HOME_POOL_OPTION_H</option>
+      <option value="I">COM_TS_GAMES_HOME_POOL_OPTION_I</option>
+      <option value="J">COM_TS_GAMES_HOME_POOL_OPTION_J</option>
+      <option value="K">COM_TS_GAMES_HOME_POOL_OPTION_K</option>
+      <option value="L">COM_TS_GAMES_HOME_POOL_OPTION_L</option>
+      <option value="M">COM_TS_GAMES_HOME_POOL_OPTION_M</option>
+      <option value="N">COM_TS_GAMES_HOME_POOL_OPTION_N</option>
+      <option value="O">COM_TS_GAMES_HOME_POOL_OPTION_O</option>
+    </field>
+    <field name="game_date" type="calendar" class="inputbox" format="%Y-%m-%d" translateformat="true" label="COM_TS_FORM_LBL_GAME_GAME_DATE" description="COM_TS_FORM_DESC_GAME_GAME_DATE" hint="COM_TS_FORM_LBL_GAME_GAME_DATE"/>
+    <field name="game_type" type="list" label="COM_TS_FORM_LBL_GAME_GAME_TYPE" description="COM_TS_FORM_DESC_GAME_GAME_TYPE" hint="COM_TS_FORM_LBL_GAME_GAME_TYPE">
+      <option value="Pool">COM_TS_GAMES_GAME_TYPE_OPTION_POOL</option>
+      <option value="Silver Bracket">COM_TS_GAMES_GAME_TYPE_OPTION_SILVER_BRACKET</option>
+      <option value="Silver Bracket Game 1">COM_TS_GAMES_GAME_TYPE_OPTION_SILVER_BRACKET_GAME_1</option>
+      <option value="Silver Bracket Game 2">COM_TS_GAMES_GAME_TYPE_OPTION_SILVER_BRACKET_GAME_2</option>
+      <option value="Silver Bracket Game 3">COM_TS_GAMES_GAME_TYPE_OPTION_SILVER_BRACKET_GAME_3</option>
+      <option value="Silver Bracket Game 4">COM_TS_GAMES_GAME_TYPE_OPTION_SILVER_BRACKET_GAME_4</option>
+      <option value="Silver Bracket Game 5">COM_TS_GAMES_GAME_TYPE_OPTION_SILVER_BRACKET_GAME_5</option>
+      <option value="Silver Bracket Game 6">COM_TS_GAMES_GAME_TYPE_OPTION_SILVER_BRACKET_GAME_6</option>
+      <option value="Silver Bracket Game 7">COM_TS_GAMES_GAME_TYPE_OPTION_SILVER_BRACKET_GAME_7</option>
+      <option value="Silver Bracket Game 8">COM_TS_GAMES_GAME_TYPE_OPTION_SILVER_BRACKET_GAME_8</option>
+      <option value="Silver Bracket Game 9">COM_TS_GAMES_GAME_TYPE_OPTION_SILVER_BRACKET_GAME_9</option>
+      <option value="Silver Bracket Game 10">COM_TS_GAMES_GAME_TYPE_OPTION_SILVER_BRACKET_GAME_10</option>
+      <option value="Silver Bracket Game 11">COM_TS_GAMES_GAME_TYPE_OPTION_SILVER_BRACKET_GAME_11</option>
+      <option value="Silver Bracket Game 12">COM_TS_GAMES_GAME_TYPE_OPTION_SILVER_BRACKET_GAME_12</option>
+      <option value="Silver Bracket Game 13">COM_TS_GAMES_GAME_TYPE_OPTION_SILVER_BRACKET_GAME_13</option>
+      <option value="Silver Bracket Game 14">COM_TS_GAMES_GAME_TYPE_OPTION_SILVER_BRACKET_GAME_14</option>
+      <option value="Silver Bracket Game 15">COM_TS_GAMES_GAME_TYPE_OPTION_SILVER_BRACKET_GAME_15</option>
+      <option value="Silver Bracket Game 16">COM_TS_GAMES_GAME_TYPE_OPTION_SILVER_BRACKET_GAME_16</option>
+      <option value="Consolation">COM_TS_GAMES_GAME_TYPE_OPTION_CONSOLATION</option>
+      <option value="Consolation Game 1">COM_TS_GAMES_GAME_TYPE_OPTION_CONSOLATION_GAME_1</option>
+      <option value="Consolation Game 2">COM_TS_GAMES_GAME_TYPE_OPTION_CONSOLATION_GAME_2</option>
+      <option value="Consolation Game 3">COM_TS_GAMES_GAME_TYPE_OPTION_CONSOLATION_GAME_3</option>
+      <option value="Consolation Game 4">COM_TS_GAMES_GAME_TYPE_OPTION_CONSOLATION_GAME_4</option>
+      <option value="Consolation Game 5">COM_TS_GAMES_GAME_TYPE_OPTION_CONSOLATION_GAME_5</option>
+      <option value="Consolation Game 6">COM_TS_GAMES_GAME_TYPE_OPTION_CONSOLATION_GAME_6</option>
+      <option value="Consolation Game 7">COM_TS_GAMES_GAME_TYPE_OPTION_CONSOLATION_GAME_7</option>
+      <option value="Consolation Game 8">COM_TS_GAMES_GAME_TYPE_OPTION_CONSOLATION_GAME_8</option>
+      <option value="Consolation Game 9">COM_TS_GAMES_GAME_TYPE_OPTION_CONSOLATION_GAME_9</option>
+      <option value="Consolation Game 10">COM_TS_GAMES_GAME_TYPE_OPTION_CONSOLATION_GAME_10</option>
+      <option value="Consolation Game 11">COM_TS_GAMES_GAME_TYPE_OPTION_CONSOLATION_GAME_11</option>
+      <option value="Consolation Game 12">COM_TS_GAMES_GAME_TYPE_OPTION_CONSOLATION_GAME_12</option>
+      <option value="Consolation Game 13">COM_TS_GAMES_GAME_TYPE_OPTION_CONSOLATION_GAME_13</option>
+      <option value="Consolation Game 14">COM_TS_GAMES_GAME_TYPE_OPTION_CONSOLATION_GAME_14</option>
+      <option value="Consolation Game 15">COM_TS_GAMES_GAME_TYPE_OPTION_CONSOLATION_GAME_15</option>
+      <option value="Consolation Game 16">COM_TS_GAMES_GAME_TYPE_OPTION_CONSOLATION_GAME_16</option>
+      <option value="Consolation Game 17">COM_TS_GAMES_GAME_TYPE_OPTION_CONSOLATION_GAME_17</option>
+      <option value="Consolation Game 18">COM_TS_GAMES_GAME_TYPE_OPTION_CONSOLATION_GAME_18</option>
+      <option value="Consolation Game 19">COM_TS_GAMES_GAME_TYPE_OPTION_CONSOLATION_GAME_19</option>
+      <option value="Consolation Game 20">COM_TS_GAMES_GAME_TYPE_OPTION_CONSOLATION_GAME_20</option>
+      <option value="Championship">COM_TS_GAMES_GAME_TYPE_OPTION_CHAMPIONSHIP</option>
+      <option value="Championship Game 1">COM_TS_GAMES_GAME_TYPE_OPTION_CHAMPIONSHIP_GAME_1</option>
+      <option value="Championship Game 2">COM_TS_GAMES_GAME_TYPE_OPTION_CHAMPIONSHIP_GAME_2</option>
+      <option value="Championship Game 3">COM_TS_GAMES_GAME_TYPE_OPTION_CHAMPIONSHIP_GAME_3</option>
+      <option value="Championship Game 4">COM_TS_GAMES_GAME_TYPE_OPTION_CHAMPIONSHIP_GAME_4</option>
+      <option value="Championship Game 5">COM_TS_GAMES_GAME_TYPE_OPTION_CHAMPIONSHIP_GAME_5</option>
+      <option value="Championship Game 6">COM_TS_GAMES_GAME_TYPE_OPTION_CHAMPIONSHIP_GAME_6</option>
+      <option value="Championship Game 7">COM_TS_GAMES_GAME_TYPE_OPTION_CHAMPIONSHIP_GAME_7</option>
+      <option value="Championship Game 8">COM_TS_GAMES_GAME_TYPE_OPTION_CHAMPIONSHIP_GAME_8</option>
+      <option value="Championship Game 9">COM_TS_GAMES_GAME_TYPE_OPTION_CHAMPIONSHIP_GAME_9</option>
+      <option value="Championship Game 10">COM_TS_GAMES_GAME_TYPE_OPTION_CHAMPIONSHIP_GAME_10</option>
+      <option value="Championship Game 11">COM_TS_GAMES_GAME_TYPE_OPTION_CHAMPIONSHIP_GAME_11</option>
+      <option value="Championship Game 12">COM_TS_GAMES_GAME_TYPE_OPTION_CHAMPIONSHIP_GAME_12</option>
+      <option value="Championship Game 13">COM_TS_GAMES_GAME_TYPE_OPTION_CHAMPIONSHIP_GAME_13</option>
+      <option value="Championship Game 14">COM_TS_GAMES_GAME_TYPE_OPTION_CHAMPIONSHIP_GAME_14</option>
+      <option value="Championship Game 15">COM_TS_GAMES_GAME_TYPE_OPTION_CHAMPIONSHIP_GAME_15</option>
+      <option value="Championship Game 16">COM_TS_GAMES_GAME_TYPE_OPTION_CHAMPIONSHIP_GAME_16</option>
+      <option value="Championship Game 17">COM_TS_GAMES_GAME_TYPE_OPTION_CHAMPIONSHIP_GAME_17</option>
+      <option value="Championship Game 18">COM_TS_GAMES_GAME_TYPE_OPTION_CHAMPIONSHIP_GAME_18</option>
+      <option value="Championship Game 19">COM_TS_GAMES_GAME_TYPE_OPTION_CHAMPIONSHIP_GAME_19</option>
+      <option value="Championship Game 20">COM_TS_GAMES_GAME_TYPE_OPTION_CHAMPIONSHIP_GAME_20</option>
+      <option value="Championship Game 21">COM_TS_GAMES_GAME_TYPE_OPTION_CHAMPIONSHIP_GAME_21</option>
+      <option value="Championship Game 22">COM_TS_GAMES_GAME_TYPE_OPTION_CHAMPIONSHIP_GAME_22</option>
+      <option value="Championship Game 23">COM_TS_GAMES_GAME_TYPE_OPTION_CHAMPIONSHIP_GAME_23</option>
+      <option value="Championship Game 24">COM_TS_GAMES_GAME_TYPE_OPTION_CHAMPIONSHIP_GAME_24</option>
+      <option value="Championship Game 25">COM_TS_GAMES_GAME_TYPE_OPTION_CHAMPIONSHIP_GAME_25</option>
+      <option value="Bronze Bracket">COM_TS_GAMES_GAME_TYPE_OPTION_BRONZE_BRACKET</option>
+      <option value="Bronze Bracket 1">COM_TS_GAMES_GAME_TYPE_OPTION_BRONZE_BRACKET_1</option>
+      <option value="Bronze Bracket 2">COM_TS_GAMES_GAME_TYPE_OPTION_BRONZE_BRACKET_2</option>
+      <option value="Bronze Bracket 3">COM_TS_GAMES_GAME_TYPE_OPTION_BRONZE_BRACKET_3</option>
+      <option value="Bronze Bracket 4">COM_TS_GAMES_GAME_TYPE_OPTION_BRONZE_BRACKET_4</option>
+      <option value="Bronze Bracket 5">COM_TS_GAMES_GAME_TYPE_OPTION_BRONZE_BRACKET_5</option>
+      <option value="Bronze Bracket 6">COM_TS_GAMES_GAME_TYPE_OPTION_BRONZE_BRACKET_6</option>
+      <option value="Bronze Bracket 7">COM_TS_GAMES_GAME_TYPE_OPTION_BRONZE_BRACKET_7</option>
+      <option value="Bronze Bracket 8">COM_TS_GAMES_GAME_TYPE_OPTION_BRONZE_BRACKET_8</option>
+      <option value="Bronze Bracket 9">COM_TS_GAMES_GAME_TYPE_OPTION_BRONZE_BRACKET_9</option>
+      <option value="Bronze Bracket 10">COM_TS_GAMES_GAME_TYPE_OPTION_BRONZE_BRACKET_10</option>
+      <option value="Bronze Bracket 11">COM_TS_GAMES_GAME_TYPE_OPTION_BRONZE_BRACKET_11</option>
+      <option value="Bronze Bracket 12">COM_TS_GAMES_GAME_TYPE_OPTION_BRONZE_BRACKET_12</option>
+      <option value="Bronze Bracket 13">COM_TS_GAMES_GAME_TYPE_OPTION_BRONZE_BRACKET_13</option>
+      <option value="Bronze Bracket 14">COM_TS_GAMES_GAME_TYPE_OPTION_BRONZE_BRACKET_14</option>
+      <option value="Bronze Bracket 15">COM_TS_GAMES_GAME_TYPE_OPTION_BRONZE_BRACKET_15</option>
+      <option value="Bronze Bracket 16">COM_TS_GAMES_GAME_TYPE_OPTION_BRONZE_BRACKET_16</option>
+    </field>
+    <field name="field_location" type="text"  class="inputbox" label="COM_TS_FORM_LBL_GAME_FIELD_LOCATION" description="COM_TS_FORM_DESC_GAME_FIELD_LOCATION" hint="COM_TS_FORM_LBL_GAME_FIELD_LOCATION"/>
+    <field name="home_score" default="" label="COM_TS_FORM_LBL_GAME_HOME_SCORE" description="COM_TS_FORM_DESC_GAME_HOME_SCORE" hint="COM_TS_FORM_LBL_GAME_HOME_SCORE"/>
+    <field name="visitor_score" default="" label="COM_TS_FORM_LBL_GAME_VISITOR_SCORE" description="COM_TS_FORM_DESC_GAME_VISITOR_SCORE" hint="COM_TS_FORM_LBL_GAME_VISITOR_SCORE"/>
+    <field name="notes" default="" editor="|" buttons="false" filter="JComponentHelper::filterText" type="editor" label="COM_TS_FORM_LBL_GAME_NOTES" description="COM_TS_FORM_DESC_GAME_NOTES" hint="COM_TS_FORM_LBL_GAME_NOTES"/>
+    <field name="age_id" query="SELECT * FROM `#__ts_age` WHERE 1 ORDER BY age_num" key_field="age_id" value_field="age" type="sql" layout="joomla.form.field.list-fancy-select" label="COM_TS_FORM_LBL_GAME_AGE_ID" description="COM_TS_FORM_DESC_GAME_AGE_ID" hint="COM_TS_FORM_LBL_GAME_AGE_ID"/>
+
+    <field name="tournament_id" query="SELECT * FROM #__ts_tournament t
+    INNER JOIN #__ts_season s on s.season_id=t.season_id
+    WHERE s.season_current = 1" key_field="id" value_field="tournament_name" type="sql" layout="joomla.form.field.list-fancy-select" label="COM_TS_FORM_LBL_GAME_TOURNAMENT_ID" description="COM_TS_FORM_DESC_GAME_TOURNAMENT_ID" hint="COM_TS_FORM_LBL_GAME_TOURNAMENT_ID"/>
+    <field name="visitor_pool" type="list" label="COM_TS_FORM_LBL_GAME_VISITOR_POOL" description="COM_TS_FORM_DESC_GAME_VISITOR_POOL" hint="COM_TS_FORM_LBL_GAME_VISITOR_POOL">
+      <option value="A">COM_TS_GAMES_VISITOR_POOL_OPTION_A</option>
+      <option value="B">COM_TS_GAMES_VISITOR_POOL_OPTION_B</option>
+      <option value="C">COM_TS_GAMES_VISITOR_POOL_OPTION_C</option>
+      <option value="D">COM_TS_GAMES_VISITOR_POOL_OPTION_D</option>
+      <option value="E">COM_TS_GAMES_VISITOR_POOL_OPTION_E</option>
+      <option value="F">COM_TS_GAMES_VISITOR_POOL_OPTION_F</option>
+      <option value="G">COM_TS_GAMES_VISITOR_POOL_OPTION_G</option>
+      <option value="H">COM_TS_GAMES_VISITOR_POOL_OPTION_H</option>
+      <option value="I">COM_TS_GAMES_VISITOR_POOL_OPTION_I</option>
+      <option value="J">COM_TS_GAMES_VISITOR_POOL_OPTION_J</option>
+      <option value="K">COM_TS_GAMES_VISITOR_POOL_OPTION_K</option>
+      <option value="L">COM_TS_GAMES_VISITOR_POOL_OPTION_L</option>
+      <option value="M">COM_TS_GAMES_VISITOR_POOL_OPTION_M</option>
+      <option value="N">COM_TS_GAMES_VISITOR_POOL_OPTION_N</option>
+      <option value="O">COM_TS_GAMES_VISITOR_POOL_OPTION_O</option>
+    </field>
+    <field name="game_time" getdatefrom="game_date" type="calendartimeonly" class="inputbox" format="%Y-%m-%d %I:%M:%S %p" timeformat="12" showtime="true" translateformat="true" label="COM_TS_FORM_LBL_GAME_GAME_TIME" description="COM_TS_FORM_DESC_GAME_GAME_TIME" hint="COM_TS_FORM_LBL_GAME_GAME_TIME"/>
+    <field name="game_order" label="COM_TS_FORM_LBL_GAME_GAME_ORDER" description="COM_TS_FORM_DESC_GAME_GAME_ORDER" hint="COM_TS_FORM_LBL_GAME_GAME_ORDER"/>
+    <field name="game_active" type="checkbox" checked="0" label="COM_TS_FORM_LBL_GAME_GAME_ACTIVE" description="COM_TS_FORM_DESC_GAME_GAME_ACTIVE" hint="COM_TS_FORM_LBL_GAME_GAME_ACTIVE"/>
+    <field name="version_note" type="text" label="JGLOBAL_FIELD_VERSION_NOTE_LABEL" description="JGLOBAL_FIELD_VERSION_NOTE_DESC" class="inputbox" size="45" labelclass="control-label"/>
+  </fieldset>
+</form>

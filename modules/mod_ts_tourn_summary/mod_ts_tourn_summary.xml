@@ -1,0 +1,25 @@
+<extension type="module" version="3.1" client="site" method="upgrade">
+	<name>5 Star Tournies: Tournament Summary</name>
+	<author>Oxbow Technologies</author>
+	<creationDate>9/21/2020</creationDate>
+	<copyright>Copyright (C) 2020</copyright>
+	<license>Oxbow Technologies</license>
+	<authorEmail>acaipen@pilotfishseo.com</authorEmail>
+	<authorUrl>www.pilotfishseo.com</authorUrl>
+	<version>1.0.0</version>
+	<description>5 Star Tournies: Displays a summary of tournament information.</description>
+	<files>
+            <filename module="mod_ts_tourn_summary">mod_ts_tourn_summary.php</filename>
+            <filename>index.html</filename>
+            <filename>helper.php</filename>
+            <filename>tmpl/default.php</filename>
+            <filename>tmpl/index.html</filename>
+            <filename>mod_ts_tourn_summary.xml</filename>
+        </files>
+	<languages>
+	</languages>
+	<config>
+        <fields name="params">
+        </fields>
+        </config>
+</extension>

@@ -1,0 +1,25 @@
+<extension type="module" version="3.1" client="site" method="upgrade">
+	<name>Team Sports Tournaments: TShirts</name>
+	<author>Oxbow Technologies</author>
+	<creationDate>9/21/2020</creationDate>
+	<copyright>Copyright (C) 2020</copyright>
+	<license>Oxbow Technologies</license>
+	<authorEmail>acaipen@pilotfishseo.com</authorEmail>
+	<authorUrl>www.pilotfishseo.com</authorUrl>
+	<version>1.0.0</version>
+	<description>Team Sports Tournaments: T-Shirt advertisements for display on any webpage</description>
+	<files>
+            <filename module="mod_ts_shirts">mod_ts_shirts.php</filename>
+            <filename>index.html</filename>
+            <filename>helper.php</filename>
+            <filename>tmpl/default.php</filename>
+            <filename>tmpl/index.html</filename>
+            <filename>mod_ts_shirts.xml</filename>
+        </files>
+	<languages>
+	</languages>
+	<config>
+        <fields name="params">
+        </fields>
+        </config>
+</extension>

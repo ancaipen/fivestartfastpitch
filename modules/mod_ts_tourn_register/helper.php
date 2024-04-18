@@ -68,13 +68,13 @@ class mod_ts_tourn_register
         
         $registration_id = filter_var(trim($registration_id), FILTER_SANITIZE_STRING);
         
-        $query = "select t.tournament_name, a.age, ac.tournament_cost,rt.* from jos_ts_register_tourn rt
-        inner join jos_ts_age a on a.age_id=rt.age_id
-        inner join jos_ts_tournament t on t.tournament_id=rt.tournament_id
-        inner join jos_ts_tournament_age_cost ac on ac.age_id=rt.age_id AND ac.tournament_id=rt.tournament_id
-        INNER JOIN jos_ts_season s on s.season_id=t.season_id
+        $query = "select t.tournament_name, a.age, ac.tournament_cost,rt.* from j3_ts_register_tourn rt
+        inner join j3_ts_age a on a.age_id=rt.age_id
+        inner join j3_ts_tournament t on t.id=rt.tournament_id
+        inner join j3_ts_tournament_age_cost ac on ac.age_id=rt.age_id AND ac.tournament_id=rt.tournament_id
+        INNER JOIN j3_ts_season s on s.season_id=t.season_id
         WHERE (t.is_deleted = 0 OR t.is_deleted IS NULL) AND 
-        register_id = ".($registration_id). " AND t.season_id in (SELECT season_id FROM jos_ts_season WHERE season_current = 1) ";
+        register_id = ".($registration_id). " AND t.season_id in (SELECT season_id FROM j3_ts_season WHERE season_current = 1) ";
 
         $db = Factory::getDBO();
         $db->setQuery($query);
@@ -132,11 +132,11 @@ class mod_ts_tourn_register
         //TOURNAMENT DROPDOWN
         //-------------------------------
 
-        $query = "select tournament_id, tournament_name,
+        $query = "select id as tournament_id, tournament_name,
         DATE_FORMAT(tournament_start_date, '%M %D') as tournament_start_name,
         DATE_FORMAT(tournament_end_date, '%M %D') as tournament_end_name
-        from jos_ts_tournament t
-        INNER JOIN jos_ts_season s on s.season_id=t.season_id
+        from j3_ts_tournament t
+        INNER JOIN j3_ts_season s on s.season_id=t.season_id
         WHERE (is_deleted = 0 OR is_deleted IS NULL) AND s.season_current = 1
         ORDER BY tournament_start_date ASC ";
 
@@ -164,8 +164,8 @@ class mod_ts_tourn_register
     public static function CheckActiveTournaments()
     {
 
-        $query = "SELECT tournament_name FROM jos_ts_tournament t
-        INNER JOIN jos_ts_season s on s.season_id=t.season_id
+        $query = "SELECT tournament_name FROM j3_ts_tournament t
+        INNER JOIN j3_ts_season s on s.season_id=t.season_id
         WHERE s.season_current = 1 AND (t.is_deleted = 0 OR t.is_deleted IS NULL) ";
 
         $found = false;
@@ -198,9 +198,9 @@ class mod_ts_tourn_register
 			$tourn_capacity = 0;
 			
 			//get tournament capacity
-			$query = "SELECT ta.tourn_capacity FROM jos_ts_tournament t 
-			INNER JOIN jos_ts_tournament_age_cost ta on ta.tournament_id=t.tournament_id
-			INNER JOIN jos_ts_season s on s.season_id=t.season_id 
+			$query = "SELECT ta.tourn_capacity FROM j3_ts_tournament t 
+			INNER JOIN j3_ts_tournament_age_cost ta on ta.tournament_id=t.id
+			INNER JOIN j3_ts_season s on s.season_id=t.season_id 
 			WHERE s.season_current = 1 
 			AND (t.is_deleted = 0 OR t.is_deleted IS NULL) 
 			AND ta.tourn_capacity IS NOT NULL ";
@@ -223,10 +223,10 @@ class mod_ts_tourn_register
 		if($tourn_capacity > 0)
 		{
 
-			$query = "SELECT count(*) as reg_count FROM jos_ts_register_tourn rt 
-			INNER JOIN jos_ts_register r on r.registration_id=rt.register_id 
-			INNER JOIN  jos_ts_tournament t on t.tournament_id = rt.tournament_id
-			INNER JOIN jos_ts_season s on s.season_id=t.season_id 
+			$query = "SELECT count(*) as reg_count FROM j3_ts_register_tourn rt 
+			INNER JOIN j3_ts_register r on r.registration_id=rt.register_id 
+			INNER JOIN  j3_ts_tournament t on t.id = rt.tournament_id
+			INNER JOIN j3_ts_season s on s.season_id=t.season_id 
 			WHERE s.season_current = 1 
 			AND (t.is_deleted = 0 OR t.is_deleted IS NULL) 
 			AND (rt.waitlist IS NULL OR rt.waitlist = 0)
@@ -266,10 +266,10 @@ class mod_ts_tourn_register
         //AGE DROPDOWN
         //-------------------------------
 
-        $query = "SELECT * FROM jos_ts_age a
-        INNER JOIN jos_ts_tournament_age_cost tac on tac.age_id = a.age_id
-        INNER JOIN jos_ts_tournament t on t.tournament_id = tac.tournament_id
-        INNER JOIN jos_ts_season s on s.season_id=t.season_id 
+        $query = "SELECT * FROM j3_ts_age a
+        INNER JOIN j3_ts_tournament_age_cost tac on tac.age_id = a.age_id
+        INNER JOIN j3_ts_tournament t on t.id = tac.tournament_id
+        INNER JOIN j3_ts_season s on s.season_id=t.season_id 
         WHERE (t.is_deleted = 0 OR t.is_deleted IS NULL) AND s.season_current = 1
         ORDER BY age_num";
 
@@ -298,9 +298,9 @@ class mod_ts_tourn_register
     public static function PopulateTournament()
     {
 			
-        $query = "SELECT * FROM jos_ts_tournament_age_cost ta
-        INNER JOIN jos_ts_tournament t on t.tournament_id=ta.tournament_id
-        INNER JOIN jos_ts_age a on a.age_id = ta.age_id
+        $query = "SELECT * FROM j3_ts_tournament_age_cost ta
+        INNER JOIN j3_ts_tournament t on t.id=ta.tournament_id
+        INNER JOIN j3_ts_age a on a.age_id = ta.age_id
         WHERE (t.is_deleted = 0 OR t.is_deleted IS NULL) AND 
         ORDER BY tournament_name asc, age desc ";
 
@@ -396,7 +396,7 @@ class mod_ts_tourn_register
 				$reg_status = 'Waiting List';
 			}
 			
-            $query = "INSERT INTO jos_ts_register (team_name, level_play, team_manager_1, team_manager_2, team_address, team_city, team_state, team_zip, home_phone, cell_phone_1, cell_phone_2, email_1, email_2, comments, reg_status, season_id) ";
+            $query = "INSERT INTO j3_ts_register (team_name, level_play, team_manager_1, team_manager_2, team_address, team_city, team_state, team_zip, home_phone, cell_phone_1, cell_phone_2, email_1, email_2, comments, reg_status, season_id) ";
             $query = $query . "VALUES ('".  ($team_name) . "',";
             $query = $query . "'".  ($level_play) . "',";
             $query = $query . "'".  ($team_manager_1) . "',";
@@ -412,7 +412,7 @@ class mod_ts_tourn_register
             $query = $query . "'".  ($email_2) . "',";
             $query = $query . "'".  ($comments) . "',";
 			$query = $query . "'".$reg_status."',";
-            $query = $query . "(SELECT season_id FROM jos_ts_season WHERE season_current = 1 limit 1));";
+            $query = $query . "(SELECT season_id FROM j3_ts_season WHERE season_current = 1 limit 1));";
 
             //joomla database call
             $db = Factory::getDBO();
@@ -473,7 +473,7 @@ class mod_ts_tourn_register
             }
 
             //now retrieve last inserted id
-            //$query = 'SELECT MAX(registration_id) as registration_id FROM jos_ts_register;';
+            //$query = 'SELECT MAX(registration_id) as registration_id FROM j3_ts_register;';
             $query = 'SELECT LAST_INSERT_ID() as registration_id;';
 
             $db = Factory::getDBO();
@@ -524,7 +524,7 @@ class mod_ts_tourn_register
                             $age = filter_var(trim($age), FILTER_SANITIZE_STRING);
                             $registration_id = filter_var(trim($registration_id), FILTER_SANITIZE_STRING);
                             
-                            $query = 'INSERT INTO jos_ts_register_tourn (tournament_id, age_id, waitlist, register_id) ';
+                            $query = 'INSERT INTO j3_ts_register_tourn (tournament_id, age_id, waitlist, register_id) ';
                             $query = $query . "VALUES (".  ($tourn) . ",";
                             $query = $query .   ($age) . ",";
 							$query = $query .   ($age_waitlist) . ",";
@@ -563,7 +563,7 @@ class mod_ts_tourn_register
         $registration_id = filter_var(trim($registration_id), FILTER_SANITIZE_STRING);  
         
         //get tournament registration data
-        $query = "select * from jos_ts_register where registration_id=".$registration_id;
+        $query = "select * from j3_ts_register where id=".$registration_id;
         
         $e_html = "<div style='font-family: arial;'>"."\r\n";
         $e_html .= "<h1>Tournament Registration - ".date("m.d.y")."</h1>"."\r\n";
@@ -607,13 +607,13 @@ class mod_ts_tourn_register
         }
         
         //get selected tournaments
-        $query = 'SELECT t.tournament_name, t.tournament_start_date, t.tournament_end_date, t.tournament_description, a.age, ac.tournament_cost 
-        FROM jos_ts_register_tourn tr
-        inner join jos_ts_register r on r.registration_id=register_id
-        inner join jos_ts_tournament t on t.tournament_id=tr.tournament_id 
-        inner join jos_ts_age a on a.age_id=tr.age_id 
-        inner join jos_ts_tournament_age_cost ac on ac.tournament_id=t.tournament_id and ac.age_id=a.age_id         
-        WHERE r.registration_id = '.$registration_id;
+        $query = 'SELECT t.id as tournament_id, t.tournament_name, t.tournament_start_date, t.tournament_end_date, t.tournament_description, a.age, ac.tournament_cost 
+        FROM j3_ts_register_tourn tr
+        inner join j3_ts_register r on r.id=register_id
+        inner join j3_ts_tournament t on t.id=tr.tournament_id 
+        inner join j3_ts_age a on a.age_id=tr.age_id 
+        inner join j3_ts_tournament_age_cost ac on ac.tournament_id=t.id and ac.age_id=a.age_id         
+        WHERE r.id = '.$registration_id;
         
         $db = Factory::getDBO();
         $db->setQuery($query);

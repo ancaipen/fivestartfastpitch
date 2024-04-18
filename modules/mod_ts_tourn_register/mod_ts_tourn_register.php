@@ -169,8 +169,8 @@ else
             $comments = "";
 
             //get variables back from the database based on saved last id
-            $query = 'SELECT * FROM jos_ts_register ';
-            $query = $query . 'WHERE registration_id='.($registration_id);
+            $query = 'SELECT * FROM j3_ts_register ';
+            $query = $query . 'WHERE id='.($registration_id);
 
             $db =& JFactory::getDBO();
             $db->setQuery($query);

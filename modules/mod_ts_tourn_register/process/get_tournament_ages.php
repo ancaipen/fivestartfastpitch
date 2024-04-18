@@ -38,8 +38,8 @@ if($tournament_id != "")
 		exit;
 	}
 	
-    $sql = "select * from jos_ts_tournament_age_cost tac
-    INNER JOIN jos_ts_age a on a.age_id=tac.age_id
+    $sql = "select * from j3_ts_tournament_age_cost tac
+    INNER JOIN j3_ts_age a on a.age_id=tac.age_id
     WHERE tournament_id = ".($tournament_id). "
     ORDER BY a.age_num ";
 
@@ -103,9 +103,9 @@ function CheckTournamentCapacity($tournament_id, $age_id, $tourn_capacity = -1)
 		$tourn_capacity = 0;
 		
 		//get tournament capacity
-		$query = "SELECT ta.tourn_capacity FROM jos_ts_tournament t 
-		INNER JOIN jos_ts_tournament_age_cost ta on ta.tournament_id=t.tournament_id
-		INNER JOIN jos_ts_season s on s.season_id=t.season_id 
+		$query = "SELECT ta.tourn_capacity FROM j3_ts_tournament t 
+		INNER JOIN j3_ts_tournament_age_cost ta on ta.tournament_id=t.id
+		INNER JOIN j3_ts_season s on s.season_id=t.season_id 
 		WHERE s.season_current = 1 
 		AND (t.is_deleted = 0 OR t.is_deleted IS NULL) 
 		AND ta.tourn_capacity IS NOT NULL ";
@@ -126,10 +126,10 @@ function CheckTournamentCapacity($tournament_id, $age_id, $tourn_capacity = -1)
 	if($tourn_capacity > 0)
 	{
 
-		$query = "SELECT count(*) as reg_count FROM jos_ts_register_tourn rt 
-		INNER JOIN jos_ts_register r on r.registration_id=rt.register_id 
-		INNER JOIN  jos_ts_tournament t on t.tournament_id = rt.tournament_id
-		INNER JOIN jos_ts_season s on s.season_id=t.season_id 
+		$query = "SELECT count(*) as reg_count FROM j3_ts_register_tourn rt 
+		INNER JOIN j3_ts_register r on r.registration_id=rt.register_id 
+		INNER JOIN  j3_ts_tournament t on t.id = rt.tournament_id
+		INNER JOIN j3_ts_season s on s.season_id=t.season_id 
 		WHERE s.season_current = 1 
 		AND (t.is_deleted = 0 OR t.is_deleted IS NULL) 
 		AND (rt.waitlist IS NULL OR rt.waitlist = 0)

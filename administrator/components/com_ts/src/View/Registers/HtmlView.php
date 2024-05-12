@@ -131,8 +131,6 @@ class HtmlView extends BaseHtmlView
 			}
 		}
 
-		
-
 		// Show trash and delete for components that uses the state field
 		if (isset($this->items[0]->state))
 		{
@@ -150,7 +148,14 @@ class HtmlView extends BaseHtmlView
 		{
 			$toolbar->preferences('com_ts');
 		}
-
+		
+		//add custom buttons, active/inactive
+		$childBar->standardButton('Save')
+				->text('Save Status')
+				->icon('fas fa-copy')
+				->task('registers.saveRegisterStatus')
+				->listCheck(true);
+		
 		// Set sidebar action
 		Sidebar::setAction('index.php?option=com_ts&view=registers');
 	}

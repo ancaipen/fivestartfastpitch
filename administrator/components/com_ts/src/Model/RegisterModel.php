@@ -193,6 +193,65 @@ class RegisterModel extends AdminModel
         return $arr_tourn;
 
     }
+	
+	/**
+	 * Method to update registration status
+	 *
+	 * @param   array  $registration_id = id of the individual registration
+	 * @param   array  $reg_status = text of the registration status
+	 *
+	 * @return  boolean  True if successful.
+	 *
+	 * @throws  Exception
+	 */
+	public function updateRegStatus($registration_id, $reg_status)
+	{
+			
+		//validate request
+		if($registration_id == null)
+		{
+			return;
+		}
+		
+		if (empty($registration_id))
+		{
+			return;
+		}
+		
+		//set to inactive by default
+		if($reg_status == null)
+		{
+			$reg_status = 'New';
+		}
+		
+		if (empty($reg_status))
+		{
+			$reg_status = 'New';
+		}
+				
+		$db = $this->getDbo();
+		$query = $db->getQuery(true);
+		
+		$fields = array(
+			$db->quoteName('reg_status') . " = '" . $reg_status . "'"
+		);
+		
+		// Conditions for which records should be updated.
+		$conditions = array(
+			$db->quoteName('id') . ' = ' . $registration_id
+		);
+
+		$query->update($db->quoteName('#__ts_register'))->set($fields)->where($conditions);	
+		
+		//echo $query;
+		
+		$db->setQuery($query);	
+		$result = $db->execute();
+				
+		return $result;
+		
+	}
+	
 	/**
 	 * Method to duplicate an Register
 	 *

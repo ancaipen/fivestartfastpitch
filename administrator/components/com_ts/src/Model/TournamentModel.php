@@ -244,7 +244,11 @@ class TournamentModel extends AdminModel
 				$table->ordering = $max + 1;
 			}
 		}
+		
+		//echo var_dump($table);
+		
 	}
+	
 	public function BuildTournamentAgeCostLists($tournament_id)
     {
         $tournament_id = trim($tournament_id);
@@ -261,6 +265,7 @@ class TournamentModel extends AdminModel
 			return $html;
 		}
 		$db = $this->getDbo();
+		
         //build available list
         $query = "select a.*, ac.tournament_cost, ac.id FROM #__ts_age a
         LEFT JOIN #__ts_tournament_age_cost ac on ac.tournament_id=".$tournament_id." AND a.age_id=ac.age_id

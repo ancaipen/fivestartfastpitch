@@ -82,6 +82,9 @@ class TournamentTable extends Table implements VersionableTableInterface, Taggab
 		$input = Factory::getApplication()->input;
 		$task = $input->getString('task', '');
 		
+		//echo 'ID: '.$array['id'];
+		
+		/*
 		if($array['id'] != 0)
 		{
 			
@@ -138,6 +141,7 @@ class TournamentTable extends Table implements VersionableTableInterface, Taggab
 				
 			}
 		}
+		*/
 		
 		if ($array['id'] == 0 && empty($array['created_by']))
 		{
@@ -261,8 +265,6 @@ class TournamentTable extends Table implements VersionableTableInterface, Taggab
 		{
 			$this->ordering = self::getNextOrder();
 		}
-		
-		
 
 		return parent::check();
 	}

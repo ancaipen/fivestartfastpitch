@@ -78,7 +78,53 @@ class RegistersController extends AdminController
 		return parent::getModel($name, $prefix, array('ignore_request' => true));
 	}
 
-	
+	public function saveRegisterStatus()
+	{
+		// Check for request forgeries
+		$this->checkToken();
+
+		// Get id(s)
+		$pks = $this->input->post->get('cid', array(), 'array');
+		
+		//get status
+		
+		try
+		{
+			if (empty($pks))
+			{
+				throw new \Exception(Text::_('COM_TS_NO_ELEMENT_SELECTED'));
+			}
+
+			ArrayHelper::toInteger($pks);
+			$model = $this->getModel();
+
+			//echo var_dump($pks);
+			
+			//loop through array, activate games in bulk
+			foreach ($pks as $registration_id) {
+				if($registration_id != null && !empty($registration_id))
+				{
+					$registration_id = intval($registration_id);
+					$reg_status = $this->input->post->get('reg_status_'.$registration_id);
+					$reg_status = trim($reg_status);
+					
+					//echo var_dump($reg_status);
+					
+					//save reg status
+					$result = $model->updateRegStatus($registration_id, $reg_status);
+					//echo var_dump($result . '<br />');
+				}
+			}
+			
+			$this->setMessage(Text::_('Registrations saved'));
+		}
+		catch (\Exception $e)
+		{
+			Factory::getApplication()->enqueueMessage($e->getMessage(), 'warning');
+		}
+
+		$this->setRedirect('index.php?option=com_ts&view=registers');
+	}
 
 	/**
 	 * Method to save the submitted ordering values for records via AJAX.

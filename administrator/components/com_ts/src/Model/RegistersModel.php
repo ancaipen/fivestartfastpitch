@@ -70,13 +70,6 @@ class RegistersModel extends ListModel
 		parent::__construct($config);
 	}
 
-
-	
-
-	
-
-	
-
 	/**
 	 * Method to auto-populate the model state.
 	 *
@@ -191,7 +184,9 @@ class RegistersModel extends ListModel
 		
 		$age_id = $this->getState('filter.age_id');
 		$tournament_id = $this->getState('filter.tournament_id');
-
+		$reg_status = $this->getState('filter.reg_status');
+		
+		/*
 		if (is_numeric($published))
 		{
 			$query->where('a.state = ' . (int) $published);
@@ -200,7 +195,8 @@ class RegistersModel extends ListModel
 		{
 			$query->where('(a.state IN (0, 1))');
 		}
-
+		*/
+		
 		// Filter by search in title
 		$search = $this->getState('filter.search');
 		
@@ -208,10 +204,18 @@ class RegistersModel extends ListModel
 		{
 			$query->where('ag.age_num = "' .   $age_id.'"');
 		}
+		
 		if (is_numeric($tournament_id))
 		{
 			$query->where('ac.tournament_id = ' . (int) $tournament_id);
 		}
+		
+		if (!empty($reg_status))
+		{
+			$reg_status = trim($reg_status);
+			$query->where("a.reg_status = '" . $reg_status . "'");
+		}
+		
 		if (!empty($search))
 		{
 			if (stripos($search, 'id:') === 0)
@@ -238,10 +242,12 @@ class RegistersModel extends ListModel
 			$query->order($db->escape($orderCol . ' ' . $orderDirn));
 		}
 		
-		 
+		//echo $query; 
 		
 		return $query;
 	}
+
+
 
 	public function dropdown_regstatus($regstatus_selected, $regststatus_id = '0', $add_all = false)
     {

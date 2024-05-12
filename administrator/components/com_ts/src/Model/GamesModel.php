@@ -62,7 +62,7 @@ class GamesModel extends ListModel
 				'game_time', 'a.game_time',
 				'game_order', 'a.game_order',
 				'game_active', 'a.game_active',
-				`tournament_name`,`t.tournament_name`,
+				'tournament_name','t.tournament_name',
 			);
 		}
 
